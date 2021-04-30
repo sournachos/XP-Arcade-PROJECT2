@@ -17,7 +17,7 @@ const sess = {
     db: sequelize
   })
 };
-
+// Hamza was here
 app.use(session(sess));
 
 app.use(express.json());
