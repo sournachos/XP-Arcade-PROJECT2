@@ -1,0 +1,26 @@
+{
+  "name": "XP-Arcade-PROJECT2",
+  "version": "1.0.0",
+  "description": "Testing Branch -Matt Bohl",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sournachos/XP-Arcade-PROJECT2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sournachos/XP-Arcade-PROJECT2/issues"
+  },
+  "homepage": "https://github.com/sournachos/XP-Arcade-PROJECT2#readme"
+}
