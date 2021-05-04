@@ -1,3 +1,3 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { login } = require('../../models');
 const withAuth = require('../../utils/auth');
