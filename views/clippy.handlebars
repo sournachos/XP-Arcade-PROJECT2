@@ -1,0 +1,23 @@
+
+<head>
+<!-- Add the stylesheet to the head -->
+<link rel="stylesheet" type="text/css" href="js/clippy/build/clippy.css" media="all">
+</head>
+
+<body>
+    <h1>Clippy</h1>
+<!-- Add these scripts to  the bottom of the page -->
+<!-- jQuery 1.7+ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Clippy.js -->
+<script src="js/clippy/build/clippy.min.js"></script>
+
+<!-- Init script -->
+<script type="text/javascript">
+    clippy.load('Merlin', function(agent) {
+        console.log("here")
+        agent.show();
+    });
+</script>
+</body>
