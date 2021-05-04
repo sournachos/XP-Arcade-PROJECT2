@@ -14,7 +14,7 @@ https://lucid.app/lucidchart/invitations/accept/inv_52285290-3619-4189-a417-4355
 ### Resources
 
 ### Contributers
-Jose Rivera : github link
-Matt Parker : github link
-Hamza Sait : githug link
-Matthew Bohl : github link
+Jose Rivera : https://github.com/sournachos
+Matt Parker : https://github.com/mattyp1007
+Hamza Sait : https://github.com/hamzsait
+Matthew Bohl : https://github.com/mattjb97

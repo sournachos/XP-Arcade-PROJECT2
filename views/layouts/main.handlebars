@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+  <style type="text/css">
+ body {
+  background-image: url('../images/background.jpg');
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+ }
+</style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Windows XP</title>
@@ -11,15 +19,10 @@
 </head>
 
 <body>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
-  <main>
+  <div class ="bg-primary fixed-bottom d-flex justify-content-start">
+    <a href="/" class ="bg-success px-2 py-1 text-decoration-none rounded-right" >Home</a>
+  </div>
+    <main>
 
       {{{body}}}
     
