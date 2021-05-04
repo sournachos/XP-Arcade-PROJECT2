@@ -1,19 +1,22 @@
 
 .container {
-    width: 500px;
+    width: auto;
     align-content: center;
   }
   
   .grid {
     height: 400px;
     width: 400px;
-    display: flex;
-    flex-wrap: wrap;
     background-color: gray;
     margin-left: 50px;
     margin-top: 20px;
     border: 10px solid darkgrey;
     margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: 40px;
+    
+    
   }
   
   div {
