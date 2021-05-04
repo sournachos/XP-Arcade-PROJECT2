@@ -46,7 +46,7 @@ User.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'arcade_db',
+        modelName: 'arcade_users',
     });
 
 module.exports = User

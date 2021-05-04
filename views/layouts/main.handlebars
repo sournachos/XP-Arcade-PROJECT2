@@ -19,13 +19,17 @@
 </head>
 
 <body>
+
+  {{#if logged_in}}
+
+  {{/if}}
   <div class ="bg-primary fixed-bottom d-flex justify-content-start">
     <a href="/" class ="bg-success px-2 text-decoration-none rounded-right text-light" >Home</a>
   </div>
     <main>
 
       {{{body}}}
-    
+</script>
   </main>
 </body>
 </html>
