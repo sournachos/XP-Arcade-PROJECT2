@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
         req.session.save(async () => {
             req.session.user_id = user.id;
             req.session.logged_in = true;
-            res.status(200).redirect('/home')
+            res.status(200).render('home',{logged_in:req.session.logged_in})
         })
     }
     catch (err){

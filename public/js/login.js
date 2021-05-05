@@ -67,6 +67,7 @@ clippy.load('Clippy', async function (agent) {
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({username:username,password:password})
       })
+      window.location.href = '/'
   })
 
 })
