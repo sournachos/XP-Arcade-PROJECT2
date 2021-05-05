@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       [gameArray[i], gameArray[j]] = [gameArray[j], gameArray[i]];
     }
     
-    console.log(gameArray);
+    // console.log(gameArray);
 
     for(let i = 0; i < width*width; i++) {
       const square = document.createElement('div')
@@ -202,13 +202,15 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(timer);
         result.innerHTML = 'YOU WIN!'
         isGameOver = true
-        submitScore();
+        if(i === squares.length - 1){
+          submitScore();
+        }
       }
     }
   }
 
   async function submitScore() {
-    const response = await fetch('/api/minesweeper', {
+    const response = await fetch('/api/user/minesweeper', {
       method: 'PUT',
       body: JSON.stringify({ time }),
       headers: {'Content-Type': 'application/json' },

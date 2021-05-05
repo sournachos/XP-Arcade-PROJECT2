@@ -27,10 +27,10 @@ User.init(
           len: [6],
         },
       },
-      mineSweeperScore: {
+      minesweeper_score: {
           type: DataTypes.INTEGER
       },
-      snakeScore:{
+      snake_score:{
         type:DataTypes.INTEGER
       }
     },
