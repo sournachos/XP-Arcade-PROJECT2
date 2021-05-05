@@ -28,21 +28,53 @@ router.post('/', async (req, res) => {
 
 
 })
+
+
 router.post('/login', async (req, res) => {
-    const user = users.find(user => user.name === req.body.name)
-    if (user === null) {
-        return res.status(400).send("Cannot find user")
-    }
     try {
-        if (await bcrypt.compare(req.body.password, user.password)) {
-            res.send('Success')
-        } else {
-            res.send('Not Allowed')
+        
+        const user = await User.findOne({where:{username:req.body.username}})
+        if(!user){
+            res.status(400).json({message:"Incorrect username"})
+            return
         }
 
-    } catch {
-        res.status(500).send()
+        const validPassword = user.checkPassword(req.body.password)
+        if(!validPassword){
+            res.status(400).json({message:"Invalid password"})
+            return
+        }
+
+        req.session.save(async () => {
+            req.session.user_id = user.id;
+            req.session.logged_in = true;
+            res.status(200).render('home',{logged_in:req.session.logged_in})
+        })
     }
+    catch (err){
+        console.log(err)
+    }
+})
+
+// post minesweeper score
+router.put('/minesweeper', async (req, res) => {
+  try{
+    await User.update(
+      {
+        mine_sweeper_score: req.body.time,
+      },
+      {
+        where: {
+          id: req.session.user_id,
+        },
+      }
+    )
+
+    res.status(200);
+
+  } catch (err) {
+    res.json(err);
+  }
 })
 
 module.exports = router
