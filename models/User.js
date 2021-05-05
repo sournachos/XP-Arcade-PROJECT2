@@ -1,4 +1,4 @@
-const {Model, DataTypes} = require('Sequelize')
+const {Model, DataTypes} = require('sequelize')
 const bcrypt = require('bcrypt')
 const sequelize = require("../config/connection")
 
@@ -29,6 +29,9 @@ User.init(
       },
       mineSweeperScore: {
           type: DataTypes.INTEGER
+      },
+      snakeScore:{
+        type:DataTypes.INTEGER
       }
     },
     {
