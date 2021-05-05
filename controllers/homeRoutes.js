@@ -45,4 +45,14 @@ router.get("/minesweeper", async (req, res) => {
   }
 })
 
+router.get("/snake", async (req, res) => {
+  try {
+    res.render('snake');
+    res.status(200);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
 module.exports = router
