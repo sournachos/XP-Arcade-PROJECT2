@@ -31,20 +31,17 @@ clippy.load('Clippy', async function (agent) {
       nuclear1.play();
     }
 
-  document.querySelector(".btn-warning").addEventListener("click",function(){
+  document.querySelector("#signupInstead").addEventListener("click",function(){
       document.querySelector("#login").style.display = "none"
       document.querySelector("#signup").style.display = "inline-block"
   })
 
   dangers = document.querySelectorAll(".btn-danger")
-  
   dangers.forEach(function(danger){
     danger.addEventListener("click", function(){
 
 
-
     agent.speak("t̶̺̖͛̽̅̈́͘͝ă̵̢̮̺͍͓̰͉̣̮̰͆̿̒̐̆̔̽ś̸̳̒̉͌̀̓̅͗͒̅͘͝͠ǩ̵̯̿̑̒̽͌̎͛͘ ̴̢̩̭̹͍̜͔̓̀̊́̐̂̍͆́͛f̸̬̍̊̀̿̕ạ̵̯̈͐͑̈̇i̴̦̰̜͖͔̟̪̲̱̾̾̀͛̌̈́͘ḽ̴͎̜̆̃̀̂́̚e̵̼̬͈͛d̶̡̛̫͍̙̫̣̳̠̥͙̲̈͋̆̂͒̈̈͘ ̶̢͓̮̲͔͇̬͚̞͍̠̤̞͇̬͛́̏̌̑̂s̴͙̥̣̭͇̯̔͐̽̈́͆̅̊̄̏̚͜͝ụ̵̢̨͈̱̝̣̱̲͂͆͊̊ç̷̞̭̟̭̬̱̯̍̃̅͆̈́̍̃̀̓̄̉͊̌͘͝c̵̫̩̐̏̐͂͂̿̓̂̀̈́̈̀̀͌͠ë̸̳̬̠̪̫̦͇̺s̷̡̨̰̻͙̖̯̹̬̫͖̐͗̐͋̽̽̅̉̚͘ͅs̶̨̙̹̯̐̅͗̄̿f̷̧̹̮̺͉̥̯̪̲̯̠͉͕͙̀͘u̴̠̱͈̝̗̪̼̙̣̞̹̿̿̃̇͜ļ̸̨̯̦̫̝̲̦̝̲͔̀̆̊̀̅̿́̑́̀͐̚͜͜ḽ̵̨̘̦̘͈͋̀̎̃̾̋̃̆̔̚͘y̸̺͚̭͎̹͐̓̀̽͐̆̆̄")
-
 
 
     document.querySelector("#login").style.display = "none"
@@ -54,7 +51,12 @@ clippy.load('Clippy', async function (agent) {
     document.querySelector("body").style.backgroundImage = "url(images/background-alternative.png)"
 
     playMusic()
-
     })
   })
+
+  document.querySelector("#loginInstead").addEventListener("click", function(){
+    document.querySelector("#login").style.display = "inline-block"
+    document.querySelector("#signup").style.display = "none"
+  })
+
 })
