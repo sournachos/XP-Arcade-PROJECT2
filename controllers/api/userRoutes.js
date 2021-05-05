@@ -45,4 +45,25 @@ router.post('/login', async (req, res) => {
     }
 })
 
+// post minesweeper score
+router.put('/minesweeper', async (req, res) => {
+  try{
+    await User.update(
+      {
+        mine_sweeper_score: req.body.time,
+      },
+      {
+        where: {
+          id: req.session.user_id,
+        },
+      }
+    )
+
+    res.status(200);
+
+  } catch (err) {
+    res.json(err);
+  }
+})
+
 module.exports = router
