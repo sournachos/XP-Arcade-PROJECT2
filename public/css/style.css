@@ -100,3 +100,9 @@
 .pain{
   size: 60px;
 }
+
+#test {
+  width: 400px;
+  height:400px;
+  margin: 0px auto;
+}
