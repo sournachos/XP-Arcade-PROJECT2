@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   createBoard()
-  
+
   const timerEl = document.querySelector('#timer');
   let time = 0;
   const timer = setInterval(() => {
@@ -176,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function gameOver(square) {
     result.innerHTML = 'BOOM! Game Over!'
     isGameOver = true
+    clearInterval(timer);
 
     //show ALL the bombs
     squares.forEach(square => {
@@ -197,6 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
         matches ++
       }
       if (matches === bombAmount) {
+        clearInterval(timer);
         result.innerHTML = 'YOU WIN!'
         isGameOver = true
       }
