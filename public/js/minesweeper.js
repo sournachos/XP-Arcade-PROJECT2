@@ -64,6 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   createBoard()
+  
+  const timerEl = document.querySelector('#timer');
+  let time = 0;
+  const timer = setInterval(() => {
+    time++;
+    timerEl.textContent = time
+  }, 1000)
 
   //add Flag with right click
   function addFlag(square) {
