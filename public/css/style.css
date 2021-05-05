@@ -71,3 +71,22 @@
     margin-top: 5px;
     color: #e76346;
   }
+
+  .jumbotron{
+    position: absolute;
+    top: 50%;
+    position: relative;
+    display:none;
+    border-radius: 18px;
+    background: #e0e0e0;
+    box-shadow: inset 25px 25px 49px #bebebe,
+            inset -25px -25px 49px #ffffff;
+  }
+
+  #chaos{
+    display:none;
+  }
+
+  .pain{
+    size: 60px;
+  }
