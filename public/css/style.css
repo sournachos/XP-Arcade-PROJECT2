@@ -1,10 +1,10 @@
 
-.container1 {
+.minesweeper-container {
     width: auto;
     align-content: center;
   }
   
-  .grid1 {
+.minesweeper-grid {
     height: 400px;
     width: 400px;
     background-color: gray;
@@ -16,77 +16,81 @@
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-auto-rows: 40px;
-    border: 100px;
-    
-  }
-  
-  div {
-    font-size: 25px;
-    text-align: center;
-    font-family: 'Roboto Mono', monospace;
-  
-  }
-  .valid {
-    height: 40px;
-    width: 40px;
-    border: 5px solid;
-    border-color: darkgrey;
-    box-sizing: border-box;
-  }
-  
-  .checked {
-    height: 40px;
-    width: 40px;
-    border: 2px solid;
-    background-color: #cecab7;
-    border-color: #9c998d;
-    box-sizing: border-box;
-  }
-  
-  .bomb {
-    height: 40px;
-    width: 40px;
-    border: 5px solid;
-    border-color: #f5f3eb #bab7a9 #bab7a9 #fff9db;
-    box-sizing: border-box;
-  }
-  
-  .one {
-    color: darkblue;
-  }
-  
-  .two {
-    color: darkgreen;
-  }
-  
-  .three {
-    color: darkred;
-  }
-  
-  .four{
-    color: purple;
-  }
-  
-  #result {
-    margin-top: 5px;
-    color: #e76346;
-  }
+    border: 100px;    
+}
 
-  .jumbotron{
-    position: absolute;
-    top: 50%;
-    position: relative;
-    display:none;
-    border-radius: 18px;
-    background: #e0e0e0;
-    box-shadow: inset 25px 25px 49px #bebebe,
-            inset -25px -25px 49px #ffffff;
-  }
+.minesweeper-score {
+  width:auto;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
-  #chaos{
-    display:none;
-  }
+.mine-square {
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
 
-  .pain{
-    size: 60px;
-  }
+}
+.valid {
+  height: 40px;
+  width: 40px;
+  border: 5px solid;
+  border-color: darkgrey;
+  box-sizing: border-box;
+}
+
+.checked {
+  height: 40px;
+  width: 40px;
+  border: 2px solid;
+  background-color: #cecab7;
+  border-color: #9c998d;
+  box-sizing: border-box;
+}
+
+.bomb {
+  height: 40px;
+  width: 40px;
+  border: 5px solid;
+  border-color: #f5f3eb #bab7a9 #bab7a9 #fff9db;
+  box-sizing: border-box;
+}
+
+.one {
+  color: darkblue;
+}
+
+.two {
+  color: darkgreen;
+}
+
+.three {
+  color: darkred;
+}
+
+.four{
+  color: purple;
+}
+
+#result {
+  margin-top: 5px;
+  color: #e76346;
+}
+
+.jumbotron{
+  position: absolute;
+  top: 50%;
+  position: relative;
+  display:none;
+  border-radius: 18px;
+  background: #e0e0e0;
+  box-shadow: inset 25px 25px 49px #bebebe,
+          inset -25px -25px 49px #ffffff;
+}
+
+#chaos{
+  display:none;
+}
+
+.pain{
+  size: 60px;
+}
