@@ -17,12 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const emptyArray = Array(width*width - bombAmount).fill('valid')
     const gameArray = emptyArray.concat(bombsArray)
     // const shuffledArray = gameArray.sort(() => Math.random() -0.5)
+    
     for (let i = gameArray.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
       [gameArray[i], gameArray[j]] = [gameArray[j], gameArray[i]];
     }
     
-    // console.log(shuffledArray);
+    console.log(gameArray);
 
     for(let i = 0; i < width*width; i++) {
       const square = document.createElement('div')
@@ -53,12 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (squares[i].classList.contains('valid')) {
         if (i > 0 && !isLeftEdge && squares[i -1].classList.contains('bomb')) total ++
         if (i > 9 && !isRightEdge && squares[i +1 -width].classList.contains('bomb')) total ++
-        if (i > 10 && squares[i -width].classList.contains('bomb')) total ++
-        if (i > 11 && !isLeftEdge && squares[i -1 -width].classList.contains('bomb')) total ++
-        if (i < 98 && !isRightEdge && squares[i +1].classList.contains('bomb')) total ++
+        if (i > 9 && squares[i -width].classList.contains('bomb')) total ++
+        if (i > 10 && !isLeftEdge && squares[i -1 -width].classList.contains('bomb')) total ++
+        if (i < 99 && !isRightEdge && squares[i +1].classList.contains('bomb')) total ++
         if (i < 90 && !isLeftEdge && squares[i -1 +width].classList.contains('bomb')) total ++
-        if (i < 88 && !isRightEdge && squares[i +1 +width].classList.contains('bomb')) total ++
-        if (i < 89 && squares[i +width].classList.contains('bomb')) total ++
+        if (i < 89 && !isRightEdge && squares[i +1 +width].classList.contains('bomb')) total ++
+        if (i < 90 && squares[i +width].classList.contains('bomb')) total ++
         squares[i].setAttribute('data', total)
       }
     }
@@ -133,19 +134,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
-      if (currentId > 10) {
+      if (currentId > 9) {
         const newId = squares[parseInt(currentId -width)].id
         //const newId = parseInt(currentId) -width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
-      if (currentId > 11 && !isLeftEdge) {
+      if (currentId > 10 && !isLeftEdge) {
         const newId = squares[parseInt(currentId) -1 -width].id
         //const newId = parseInt(currentId) -1 -width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
-      if (currentId < 98 && !isRightEdge) {
+      if (currentId < 99 && !isRightEdge) {
         const newId = squares[parseInt(currentId) +1].id
         //const newId = parseInt(currentId) +1   ....refactor
         const newSquare = document.getElementById(newId)
@@ -157,13 +158,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
-      if (currentId < 88 && !isRightEdge) {
+      if (currentId < 89 && !isRightEdge) {
         const newId = squares[parseInt(currentId) +1 +width].id
         //const newId = parseInt(currentId) +1 +width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
-      if (currentId < 89) {
+      if (currentId < 90) {
         const newId = squares[parseInt(currentId) +width].id
         //const newId = parseInt(currentId) +width   ....refactor
         const newSquare = document.getElementById(newId)
