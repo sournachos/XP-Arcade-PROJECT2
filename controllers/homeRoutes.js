@@ -30,4 +30,14 @@ router.get("/login", async (req,res) =>{
   }
 })
 
+router.get("/minesweeper", async (req, res) => {
+  try {
+    res.render('minesweeper');
+    res.status(200);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
 module.exports = router
