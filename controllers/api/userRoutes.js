@@ -56,12 +56,13 @@ router.post('/login', async (req, res) => {
     }
 })
 
-// post minesweeper score
+// put minesweeper score
 router.put('/minesweeper', async (req, res) => {
+  console.log("Minesweeper API route!!!!!!!!!!")
   try{
     await User.update(
       {
-        mine_sweeper_score: req.body.time,
+        minesweeper_score: req.body.time,
       },
       {
         where: {
@@ -69,7 +70,7 @@ router.put('/minesweeper', async (req, res) => {
         },
       }
     )
-
+    console.log(req.session.user_id);
     res.status(200);
 
   } catch (err) {
