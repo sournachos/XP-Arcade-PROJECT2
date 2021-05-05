@@ -29,6 +29,9 @@ User.init(
       },
       mineSweeperScore: {
           type: DataTypes.INTEGER
+      },
+      snakeScore:{
+        type:DataTypes.INTEGER
       }
     },
     {
