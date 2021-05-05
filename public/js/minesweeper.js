@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //check for win
   function checkForWin() {
     ///simplified win argument
-  let matches = 0
+    let matches = 0
 
     for (let i = 0; i < squares.length; i++) {
       if (squares[i].classList.contains('flag') && squares[i].classList.contains('bomb')) {
@@ -202,7 +202,22 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(timer);
         result.innerHTML = 'YOU WIN!'
         isGameOver = true
+        submitScore();
       }
+    }
+  }
+
+  async function submitScore() {
+    const response = await fetch('/api/minesweeper', {
+      method: 'PUT',
+      body: JSON.stringify({ time }),
+      headers: {'Content-Type': 'application/json' },
+    });
+
+    if(response.ok) {
+      // show scores
+    } else {
+      // do something else
     }
   }
 })
