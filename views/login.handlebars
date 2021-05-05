@@ -20,10 +20,15 @@ clippy.load('Clippy', async function (agent) {
         agent.speak("Click me to login.")
       }, 2500)
 
-      var d = document.getElementById('login');
-      d.style.position = "absolute";
-      d.style.left = (x - 250) + 'px';
-      d.style.top = (y - 400) + 'px';
+    var loginWindow = document.getElementById('login');
+    loginWindow.style.position = "absolute";
+    loginWindow.style.left = (x - 250)+'px';
+    loginWindow.style.top = (y - 400)+'px';
+
+    var signupWindow = document.getElementById('signup');
+    signupWindow.style.position = "absolute";
+    signupWindow.style.left = (x - 250)+'px';
+    signupWindow.style.top = (y - 400)+'px';
 
       let clippyElement = document.querySelector(".clippy")
       clippyElement.addEventListener("click", function () {
@@ -36,7 +41,12 @@ clippy.load('Clippy', async function (agent) {
         nuclear1.play();
       }
 
-      document.querySelector(".btn-danger").addEventListener("click", function () {
+    document.querySelector(".btn-warning").addEventListener("click",function(){
+        document.querySelector("#login").style.display = "none"
+        document.querySelector("#signup").style.display = "inline-block"
+    })
+
+    document.querySelector(".btn-danger").addEventListener("click",function(){
 
 
         agent.speak("t̶̺̖͛̽̅̈́͘͝ă̵̢̮̺͍͓̰͉̣̮̰͆̿̒̐̆̔̽ś̸̳̒̉͌̀̓̅͗͒̅͘͝͠ǩ̵̯̿̑̒̽͌̎͛͘ ̴̢̩̭̹͍̜͔̓̀̊́̐̂̍͆́͛f̸̬̍̊̀̿̕ạ̵̯̈͐͑̈̇i̴̦̰̜͖͔̟̪̲̱̾̾̀͛̌̈́͘ḽ̴͎̜̆̃̀̂́̚e̵̼̬͈͛d̶̡̛̫͍̙̫̣̳̠̥͙̲̈͋̆̂͒̈̈͘ ̶̢͓̮̲͔͇̬͚̞͍̠̤̞͇̬͛́̏̌̑̂s̴͙̥̣̭͇̯̔͐̽̈́͆̅̊̄̏̚͜͝ụ̵̢̨͈̱̝̣̱̲͂͆͊̊ç̷̞̭̟̭̬̱̯̍̃̅͆̈́̍̃̀̓̄̉͊̌͘͝c̵̫̩̐̏̐͂͂̿̓̂̀̈́̈̀̀͌͠ë̸̳̬̠̪̫̦͇̺s̷̡̨̰̻͙̖̯̹̬̫͖̐͗̐͋̽̽̅̉̚͘ͅs̶̨̙̹̯̐̅͗̄̿f̷̧̹̮̺͉̥̯̪̲̯̠͉͕͙̀͘u̴̠̱͈̝̗̪̼̙̣̞̹̿̿̃̇͜ļ̸̨̯̦̫̝̲̦̝̲͔̀̆̊̀̅̿́̑́̀͐̚͜͜ḽ̵̨̘̦̘͈͋̀̎̃̾̋̃̆̔̚͘y̸̺͚̭͎̹͐̓̀̽͐̆̆̄")
@@ -74,6 +84,31 @@ clippy.load('Clippy', async function (agent) {
   <button type="button" class="btn btn-primary">Login</button>
   <button type="button" class="btn btn-warning">Create Account</button>
   <button type="button" class="btn btn-danger">NUCLEAR OPTION</button>
+</div>
+
+<div id = "signup" class="jumbotron">
+  <h1 class="display-4">Sign Up</h1>
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
+  </div>
+  <input id = "username" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+</div>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+  </div>
+  <input id = "password" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+</div>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Confirm Password</span>
+  </div>
+  <input id = "passwordCheck" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+</div>
+<button type="button" class="btn btn-primary">Login</button>
+<button type="button" class="btn btn-warning">Create Account</button>
+<button type="button" class="btn btn-danger">NUCLEAR OPTION</button>
 </div>
 
 
