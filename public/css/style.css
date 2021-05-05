@@ -9,13 +9,14 @@
     width: 400px;
     background-color: gray;
     margin-left: 50px;
+    margin-right: 50px;
     margin-top: 20px;
     border: 10px solid darkgrey;
     margin-bottom: 10px;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-auto-rows: 40px;
-    
+    border: 100px;
     
   }
   
