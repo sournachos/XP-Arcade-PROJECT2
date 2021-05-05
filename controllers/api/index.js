@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const minesweeperRoutes = require('./minesweeperRoutes');
-const snakeRoutes = require('./snakeRoutes');
-const loginRoutes = require('./loginRoutes');
+// const loginRoutes = require('./loginRoutes');
+const userRoutes = require('./userRoutes');
 
-router.use('/minesweeper', minesweeperRoutes);
-router.use('/snake', snakeRoutes);
-router.use('/login', loginRoutes);
+
+router.use('/user', userRoutes)
+
 module.exports = router;
