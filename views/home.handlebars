@@ -1,10 +1,9 @@
 <script>
     clippy.load('Clippy', async function(agent){
-
-        // Do anything with the loaded agent;
         x = window.innerWidth/2
         y = window.innerHeight/2
         agent.moveTo(x,y)
         agent.show()
+        agent.speak("You have logged in")
     }
 <script>
