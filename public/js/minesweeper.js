@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const grid = document.querySelector('.grid1')
+  const grid = document.querySelector('.minesweeper-grid')
   const flagsLeft = document.querySelector('#flags-left')
   const result = document.querySelector('#result')
   let width = 10
@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     for(let i = 0; i < width*width; i++) {
       const square = document.createElement('div')
+      square.classList.add('mine-square')
       square.setAttribute('id', i)
       square.classList.add(gameArray[i])
       grid.appendChild(square)
