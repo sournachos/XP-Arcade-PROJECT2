@@ -59,4 +59,9 @@ clippy.load('Clippy', async function (agent) {
     document.querySelector("#signup").style.display = "none"
   })
 
+  document.querySelector("#logginButton").addEventListener("click", function(){
+      console.log(document.querySelector("#usernameLogin"))
+      console.log(document.querySelector("#passwordLogin"))
+  })
+
 })
