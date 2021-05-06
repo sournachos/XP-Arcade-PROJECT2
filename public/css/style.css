@@ -136,6 +136,55 @@ body {
   border-radius: 5%;
 }
 
+::marker {
+  color:tomato;
+  font-weight: bold;
+}
+
+.leaderboard {
+  /* display: inline-block; */
+  width: 40%;
+  margin: auto;
+  /* padding-right: 36px; */
+  border-radius: 3%;
+  background-color:darkslategray;
+  border: solid black 2px;
+  color:silver
+}
+
+.lb-title {
+  width: 90%;
+  margin: auto;
+  /* margin: 0px 4px 0px 4px; */
+  border-bottom: 2px solid midnightblue;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+body {
+  counter-reset: section;
+}
+
+.lb-item {
+  /* margin-left: -10px; */
+  border-bottom: 1px solid midnightblue;
+  list-style: none;
+}
+.lb-score {
+  font-weight: 700;
+  font-size: 20px;
+  /* margin-left: 30px; */
+  /* float:right; */
+}
+
+.lb-item::before {
+  counter-increment: section;
+  content: counter(section) ". ";
+}
+
+.test {
+  display: inline;
+}
 .xp {
   display: grid;
 
