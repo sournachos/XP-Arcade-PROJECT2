@@ -8,7 +8,7 @@
 
 
 <script src="js/login.js" type="text/javascript" defer></script>
-
+{{!-- main page log in form --}}
 <div id="login" class="jumbotron">
   <h1 class="display-4">Login</h1>
   <div class="input-group mb-3">
@@ -22,40 +22,40 @@
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
     </div>
-    <input id="passwordLogin" type="text" class="form-control" aria-label="Default"
+    <input id="passwordLogin" type="password" class="form-control" aria-label="Default"
       aria-describedby="inputGroup-sizing-default">
   </div>
-  <button type="button" class="btn btn-primary">Login</button>
+  <button href="/" id="loginButton" type="button" class="btn btn-primary">Login</button>
   <button id = "signupInstead" type="button" class="btn btn-warning">Create Account</button>
   <button type="button" class="btn btn-danger">Cancel</button>
 </div>
-
+{{!-- main page user creation form --}}
 <div id = "signup" class="jumbotron">
   <h1 class="display-4">Sign Up</h1>
   <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
   </div>
-  <input id = "usernameSignIn" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+  <input id = "usernameSignUp" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
   </div>
-  <input id = "passwordSignIn" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+  <input id = "passwordSignUp" type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-default">Confirm Password</span>
   </div>
-  <input id = "passwordCheck" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+  <input id = "passwordCheck" type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 </div>
-<button id='finishCreation' type="button" class="btn btn-primary">Create Account</button>
+<button id="createAccount" type="button" class="btn btn-primary">Create Account</button>
 <button id="loginInstead" type="button" class="btn btn-warning">Login Instead</button>
 <button type="button" class="btn btn-danger">Cancel</button>
 </div>
 
-
+{{!-- pasted text when the user does not log in --}}
 <div id="chaos">
   <h1 class="pain">T̶̬̰̊͐h̷̘̍̈e̸̮̬͆̍ ̶̤͋F̸̹̰͊i̷̫̣͒t̷̛̺̠̚ń̴̮è̴̫͝s̵̖̈́s̶̞̉G̶͙̔͛r̴̪̍ą̴̀m̴͓̀̃ ̵͓̈P̸̡̔̊Ä̷̼́C̵͈͗E̸̱̊̌ͅR̸̢͋
     ̴̪̋Ṱ̶̓͜e̵͔̓s̴̼͊͐t̵̫̀ ̷̳͓̌͠i̷͖̻͊̋s̸͙͝ ̸̛̬̗ą̴͇̾̅ ̶̘̹͂̒m̸̟̋u̵͇̬͒͝l̸̹̏ṭ̴̙̓̒i̴̛͈̮s̵̱͉̆̇t̸̫̖͗a̷͔͔̚ģ̸̺̏̈́ḙ̵̡͌̑
@@ -274,6 +274,7 @@
     ̸̡̆͆͜o̴̹̎r̵̫̂ ̷̭̺̿t̷͔̿͝ḧ̵͈ę̸̫̒̅ ̷̼̒N̵̲̪̚e̴̲̻̎ë̷͉̦́͠d̷͉̺̀ŝ̷̻͕
     ̸̝͂̕I̷̻̖͑m̶̗̑̚p̶̱̅r̸̤̮̅ơ̵͇̈́v̷̰̈́ě̷͉m̸̡̆e̵̢̎n̴̟̪͂ṱ̵͆̒ ̸͈̗̈́Ẕ̵̘̉̅ò̶͎n̶̥̓e̸̢̛͈™̷̭̕͜.̷̘͑̀</h1>
 </div>
-
-<audio id="nuclear" src="/mp3/nuclear.mp3" autoplay> </audio>
-<audio id="nuclear1" loop src="/mp3/fitness.mp3" autoplay> </audio>
+{{!-- audio played when user does not log in --}}
+{{!-- VERY LOUD --}}
+<audio id="nuclear" src="/mp3/nuclear.mp3"> </audio>
+<audio id="nuclear1" loop src="/mp3/fitness.mp3"> </audio>

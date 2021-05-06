@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.minesweeper-grid')
   const flagsLeft = document.querySelector('#flags-left')
   const result = document.querySelector('#result')
+  const playagain1 = document.querySelector('#playagain1')
+
   let width = 10
   let bombAmount = 20
   let flags = 0
@@ -14,31 +16,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //get shuffled game array with random bombs
     const bombsArray = Array(bombAmount).fill('bomb')
-    const emptyArray = Array(width*width - bombAmount).fill('valid')
+    const emptyArray = Array(width * width - bombAmount).fill('valid')
     const gameArray = emptyArray.concat(bombsArray)
     // const shuffledArray = gameArray.sort(() => Math.random() -0.5)
+
     for (let i = gameArray.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
       [gameArray[i], gameArray[j]] = [gameArray[j], gameArray[i]];
     }
-    
-    // console.log(shuffledArray);
 
-    for(let i = 0; i < width*width; i++) {
+    for (let i = 0; i < width * width; i++) {
       const square = document.createElement('div')
       square.classList.add('mine-square')
       square.setAttribute('id', i)
       square.classList.add(gameArray[i])
       grid.appendChild(square)
       squares.push(square)
-
       //normal click
-      square.addEventListener('click', function(e) {
+      square.addEventListener('click', function (e) {
         click(square)
       })
-
       //cntrl and left click
-      square.oncontextmenu = function(e) {
+      square.oncontextmenu = function (e) {
         e.preventDefault()
         addFlag(square)
       }
@@ -48,17 +47,17 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < squares.length; i++) {
       let total = 0
       const isLeftEdge = (i % width === 0)
-      const isRightEdge = (i % width === width -1)
+      const isRightEdge = (i % width === width - 1)
 
       if (squares[i].classList.contains('valid')) {
-        if (i > 0 && !isLeftEdge && squares[i -1].classList.contains('bomb')) total ++
-        if (i > 9 && !isRightEdge && squares[i +1 -width].classList.contains('bomb')) total ++
-        if (i > 10 && squares[i -width].classList.contains('bomb')) total ++
-        if (i > 11 && !isLeftEdge && squares[i -1 -width].classList.contains('bomb')) total ++
-        if (i < 98 && !isRightEdge && squares[i +1].classList.contains('bomb')) total ++
-        if (i < 90 && !isLeftEdge && squares[i -1 +width].classList.contains('bomb')) total ++
-        if (i < 88 && !isRightEdge && squares[i +1 +width].classList.contains('bomb')) total ++
-        if (i < 89 && squares[i +width].classList.contains('bomb')) total ++
+        if (i > 0 && !isLeftEdge && squares[i - 1].classList.contains('bomb')) total++
+        if (i > 9 && !isRightEdge && squares[i + 1 - width].classList.contains('bomb')) total++
+        if (i > 9 && squares[i - width].classList.contains('bomb')) total++
+        if (i > 10 && !isLeftEdge && squares[i - 1 - width].classList.contains('bomb')) total++
+        if (i < 99 && !isRightEdge && squares[i + 1].classList.contains('bomb')) total++
+        if (i < 90 && !isLeftEdge && squares[i - 1 + width].classList.contains('bomb')) total++
+        if (i < 89 && !isRightEdge && squares[i + 1 + width].classList.contains('bomb')) total++
+        if (i < 90 && squares[i + width].classList.contains('bomb')) total++
         squares[i].setAttribute('data', total)
       }
     }
@@ -68,6 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const timerEl = document.querySelector('#timer');
   let time = 0;
   const timer = setInterval(() => {
+    if (time >= 999) {
+      clearInterval(timer);
+    }
     time++;
     timerEl.textContent = time
   }, 1000)
@@ -79,14 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!square.classList.contains('flag')) {
         square.classList.add('flag')
         square.innerHTML = ' 🚩'
-        flags ++
-        flagsLeft.innerHTML = bombAmount- flags
+        flags++
+        flagsLeft.innerHTML = bombAmount - flags
         checkForWin()
       } else {
         square.classList.remove('flag')
         square.innerHTML = ''
-        flags --
-        flagsLeft.innerHTML = bombAmount- flags
+        flags--
+        flagsLeft.innerHTML = bombAmount - flags
       }
     }
   }
@@ -100,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
       gameOver(square)
     } else {
       let total = square.getAttribute('data')
-      if (total !=0) {
+      if (total != 0) {
         square.classList.add('checked')
         if (total == 1) square.classList.add('one')
         if (total == 2) square.classList.add('two')
@@ -114,57 +116,56 @@ document.addEventListener('DOMContentLoaded', () => {
     square.classList.add('checked')
   }
 
-
   //check neighboring squares once square is clicked
   function checkSquare(square, currentId) {
     const isLeftEdge = (currentId % width === 0)
-    const isRightEdge = (currentId % width === width -1)
+    const isRightEdge = (currentId % width === width - 1)
 
     setTimeout(() => {
       if (currentId > 0 && !isLeftEdge) {
-        const newId = squares[parseInt(currentId) -1].id
+        const newId = squares[parseInt(currentId) - 1].id
         //const newId = parseInt(currentId) - 1   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
       if (currentId > 9 && !isRightEdge) {
-        const newId = squares[parseInt(currentId) +1 -width].id
+        const newId = squares[parseInt(currentId) + 1 - width].id
         //const newId = parseInt(currentId) +1 -width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
-      if (currentId > 10) {
-        const newId = squares[parseInt(currentId -width)].id
+      if (currentId > 9) {
+        const newId = squares[parseInt(currentId - width)].id
         //const newId = parseInt(currentId) -width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
-      if (currentId > 11 && !isLeftEdge) {
-        const newId = squares[parseInt(currentId) -1 -width].id
+      if (currentId > 10 && !isLeftEdge) {
+        const newId = squares[parseInt(currentId) - 1 - width].id
         //const newId = parseInt(currentId) -1 -width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
-      if (currentId < 98 && !isRightEdge) {
-        const newId = squares[parseInt(currentId) +1].id
+      if (currentId < 99 && !isRightEdge) {
+        const newId = squares[parseInt(currentId) + 1].id
         //const newId = parseInt(currentId) +1   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
       if (currentId < 90 && !isLeftEdge) {
-        const newId = squares[parseInt(currentId) -1 +width].id
+        const newId = squares[parseInt(currentId) - 1 + width].id
         //const newId = parseInt(currentId) -1 +width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
-      if (currentId < 88 && !isRightEdge) {
-        const newId = squares[parseInt(currentId) +1 +width].id
+      if (currentId < 89 && !isRightEdge) {
+        const newId = squares[parseInt(currentId) + 1 + width].id
         //const newId = parseInt(currentId) +1 +width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
-      if (currentId < 89) {
-        const newId = squares[parseInt(currentId) +width].id
+      if (currentId < 90) {
+        const newId = squares[parseInt(currentId) + width].id
         //const newId = parseInt(currentId) +width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
@@ -174,6 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //game over
   function gameOver(square) {
+    playagain1.style.display = 'block'
     result.innerHTML = 'BOOM! Game Over!'
     isGameOver = true
     clearInterval(timer);
@@ -191,17 +193,35 @@ document.addEventListener('DOMContentLoaded', () => {
   //check for win
   function checkForWin() {
     ///simplified win argument
-  let matches = 0
+    let matches = 0
 
     for (let i = 0; i < squares.length; i++) {
       if (squares[i].classList.contains('flag') && squares[i].classList.contains('bomb')) {
-        matches ++
+        matches++
       }
       if (matches === bombAmount) {
         clearInterval(timer);
+        playagain1.style.display = 'block'
         result.innerHTML = 'YOU WIN!'
         isGameOver = true
+        if (i === squares.length - 1) {
+          submitScore();
+        }
       }
+    }
+  }
+
+  async function submitScore() {
+    const response = await fetch('/api/user/minesweeper', {
+      method: 'PUT',
+      body: JSON.stringify({ time }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      // show scores
+    } else {
+      // do something else
     }
   }
 })
