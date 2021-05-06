@@ -77,8 +77,8 @@ router.get('/leaderboard', async (req, res) => {
     const scoresData = scoresDB.map((item) =>
       item.get({ plain: true }));
 
-    res.status(200).json(scoresData);
-    res.render('leaderboard', {scoresData, logged_in: req.session.logged_in})
+    //res.status(200).json(scoresData);
+    res.render('leaderboard', {scoresData:scoresData, logged_in: req.session.logged_in})
     res.status(200)
   }
   catch (err) {
