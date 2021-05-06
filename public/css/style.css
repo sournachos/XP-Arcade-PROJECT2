@@ -1,3 +1,14 @@
+html{
+  height: 96vh;
+  width: 100vw;
+}
+
+body {
+  background-image: url('../images/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
 .minesweeper-container {
     width: auto;
@@ -173,4 +184,34 @@ body {
 
 .test {
   display: inline;
+}
+.xp {
+  display: grid;
+
+  gap: 5px;
+}
+
+.box {
+  padding: 10px;
+  cursor: move;
+}
+
+h6{
+  width: fit-content;
+}
+
+#logoutButton{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  height: 4.5vh;
+}
+
+.taskbar{
+  z-index: 1;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  height: 4.5vh;
 }
