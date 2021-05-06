@@ -7,7 +7,7 @@ clippy.load('Genie', async function (agent) {
     agent.show()
     agent.moveTo(x, y)
     const inter = setInterval(async function () {
-        agent.speak("I SURE DOTH LOVE MINESWEEPER!")
+        agent.speak("I SURE DOTH LOVE SNAKE!")
         agent.animate()
     }, 15000)
   })
