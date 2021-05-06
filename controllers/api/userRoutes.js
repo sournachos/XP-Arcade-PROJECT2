@@ -71,21 +71,25 @@ router.post('/logout', async (req,res) => {
 
 // put minesweeper score
 router.put('/minesweeper', async (req, res) => {
-  console.log("Minesweeper API route!!!!!!!!!!")
   try{
-    await User.update(
-      {
-        minesweeper_score: req.body.time,
-      },
-      {
-        where: {
-          id: req.session.user_id,
-        },
-      }
-    )
-    console.log(req.session.user_id);
-    res.status(200);
+    const newScore = req.body.time;
 
+    const userDB = await User.findByPk(req.session.user_id);
+    const userData = userDB.get({ plain: true });
+    msScore = userData.minesweeper_score;
+    if(newScore < msScore) {
+      await User.update(
+        {
+          minesweeper_score: req.body.time,
+        },
+        {
+          where: {
+            id: req.session.user_id,
+          },
+        }
+      )
+      res.status(200);
+    }
   } catch (err) {
     res.json(err);
   }
