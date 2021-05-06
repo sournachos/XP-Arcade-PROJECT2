@@ -124,3 +124,14 @@
   background-color: #127af1;
   border-radius: 5%;
 }
+
+.xp {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+}
+
+.box {
+  padding: 10px;
+  cursor: move;
+}
