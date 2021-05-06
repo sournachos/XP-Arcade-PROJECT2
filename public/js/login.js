@@ -42,30 +42,27 @@ clippy.load('Clippy', async function (agent) {
 
     agent.speak("WINDOWS XP IS A SCARY PLACE")
 
+    setTimeout(() => {  
+      setTimeout(() => {
+        document.querySelector("#login").style.display = "none"
+        document.querySelector("#chaos").style.display = "inline-block"
+      },5000)
+    document.querySelector("body").style.backgroundImage = "url(images/background-alternative.png)"
+
 
     agent.speak("t̶̺̖͛̽̅̈́͘͝ă̵̢̮̺͍͓̰͉̣̮̰͆̿̒̐̆̔̽ś̸̳̒̉͌̀̓̅͗͒̅͘͝͠ǩ̵̯̿̑̒̽͌̎͛͘ ̴̢̩̭̹͍̜͔̓̀̊́̐̂̍͆́͛f̸̬̍̊̀̿̕ạ̵̯̈͐͑̈̇i̴̦̰̜͖͔̟̪̲̱̾̾̀͛̌̈́͘ḽ̴͎̜̆̃̀̂́̚e̵̼̬͈͛d̶̡̛̫͍̙̫̣̳̠̥͙̲̈͋̆̂͒̈̈͘ ̶̢͓̮̲͔͇̬͚̞͍̠̤̞͇̬͛́̏̌̑̂s̴͙̥̣̭͇̯̔͐̽̈́͆̅̊̄̏̚͜͝ụ̵̢̨͈̱̝̣̱̲͂͆͊̊ç̷̞̭̟̭̬̱̯̍̃̅͆̈́̍̃̀̓̄̉͊̌͘͝c̵̫̩̐̏̐͂͂̿̓̂̀̈́̈̀̀͌͠ë̸̳̬̠̪̫̦͇̺s̷̡̨̰̻͙̖̯̹̬̫͖̐͗̐͋̽̽̅̉̚͘ͅs̶̨̙̹̯̐̅͗̄̿f̷̧̹̮̺͉̥̯̪̲̯̠͉͕͙̀͘u̴̠̱͈̝̗̪̼̙̣̞̹̿̿̃̇͜ļ̸̨̯̦̫̝̲̦̝̲͔̀̆̊̀̅̿́̑́̀͐̚͜͜ḽ̵̨̘̦̘͈͋̀̎̃̾̋̃̆̔̚͘y̸̺͚̭͎̹͐̓̀̽͐̆̆̄")
 
 
-
-    setTimeout(2000)
-
-
-    document.querySelector("#login").style.display = "none"
-
-    document.querySelector("#chaos").style.display = "inline-block"
-
-    document.querySelector("body").style.backgroundImage = "url(images/background-alternative.png)"
-
-    playMusic()
+    //playMusic()
+   }, 5000);
 
     var availableAgents = ['Bonzi', 'Clippy', 'F1', 'Genie', 'Genius', 'Links', 'Merlin', 'Peedy', 'Rocky', 'Rover']
 
 var talks = [
-    'How can i help you?',
-    'Nice day!',
-    'Glad to meet you.',
-    'At your service',
-    'Helloo'
+    'Life is meaningless',
+    'Your life is a lie',
+    'CHUTHULU ACCEPTS YOUR SACRIFICE',
+    'I AM DEAD',
 ]
 
 const randPos = () => .2 + Math.random() * .6
