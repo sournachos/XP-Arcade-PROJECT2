@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.minesweeper-grid')
   const flagsLeft = document.querySelector('#flags-left')
   const result = document.querySelector('#result')
+  const playagain1 = document.querySelector('#playagain1')
+
   let width = 10
   let bombAmount = 20
   let flags = 0
@@ -175,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //game over
   function gameOver(square) {
+    playagain1.style.display = 'block'
     result.innerHTML = 'BOOM! Game Over!'
     isGameOver = true
     clearInterval(timer);
@@ -200,6 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (matches === bombAmount) {
         clearInterval(timer);
+        playagain1.style.display = 'block'
         result.innerHTML = 'YOU WIN!'
         isGameOver = true
         if(i === squares.length - 1){
