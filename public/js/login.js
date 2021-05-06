@@ -40,23 +40,71 @@ clippy.load('Clippy', async function (agent) {
   dangers.forEach(function(danger){
     danger.addEventListener("click", async function(){
 
-    agent.speak("HELL IS A SCARY PLACE")
+    agent.speak("WINDOWS XP IS A SCARY PLACE")
+
+    setTimeout(() => {  
+      setTimeout(() => {
+        document.querySelector("#login").style.display = "none"
+        document.querySelector("#chaos").style.display = "inline-block"
+      },5000)
+    document.querySelector("body").style.backgroundImage = "url(images/background-alternative.png)"
 
 
     agent.speak("t̶̺̖͛̽̅̈́͘͝ă̵̢̮̺͍͓̰͉̣̮̰͆̿̒̐̆̔̽ś̸̳̒̉͌̀̓̅͗͒̅͘͝͠ǩ̵̯̿̑̒̽͌̎͛͘ ̴̢̩̭̹͍̜͔̓̀̊́̐̂̍͆́͛f̸̬̍̊̀̿̕ạ̵̯̈͐͑̈̇i̴̦̰̜͖͔̟̪̲̱̾̾̀͛̌̈́͘ḽ̴͎̜̆̃̀̂́̚e̵̼̬͈͛d̶̡̛̫͍̙̫̣̳̠̥͙̲̈͋̆̂͒̈̈͘ ̶̢͓̮̲͔͇̬͚̞͍̠̤̞͇̬͛́̏̌̑̂s̴͙̥̣̭͇̯̔͐̽̈́͆̅̊̄̏̚͜͝ụ̵̢̨͈̱̝̣̱̲͂͆͊̊ç̷̞̭̟̭̬̱̯̍̃̅͆̈́̍̃̀̓̄̉͊̌͘͝c̵̫̩̐̏̐͂͂̿̓̂̀̈́̈̀̀͌͠ë̸̳̬̠̪̫̦͇̺s̷̡̨̰̻͙̖̯̹̬̫͖̐͗̐͋̽̽̅̉̚͘ͅs̶̨̙̹̯̐̅͗̄̿f̷̧̹̮̺͉̥̯̪̲̯̠͉͕͙̀͘u̴̠̱͈̝̗̪̼̙̣̞̹̿̿̃̇͜ļ̸̨̯̦̫̝̲̦̝̲͔̀̆̊̀̅̿́̑́̀͐̚͜͜ḽ̵̨̘̦̘͈͋̀̎̃̾̋̃̆̔̚͘y̸̺͚̭͎̹͐̓̀̽͐̆̆̄")
 
 
+    //playMusic()
+   }, 5000);
 
-    setTimeout(2000)
+    var availableAgents = ['Bonzi', 'Clippy', 'F1', 'Genie', 'Genius', 'Links', 'Merlin', 'Peedy', 'Rocky', 'Rover']
 
+var talks = [
+    'Life is meaningless',
+    'Your life is a lie',
+    'CHUTHULU ACCEPTS YOUR SACRIFICE',
+    'I AM DEAD',
+]
 
-    document.querySelector("#login").style.display = "none"
+const randPos = () => .2 + Math.random() * .6
 
-    document.querySelector("#chaos").style.display = "inline-block"
+function nextAgent () {
+    let agentName = availableAgents.pop()
+    if (!agentName) return;
 
-    document.querySelector("body").style.backgroundImage = "url(images/background-alternative.png)"
+    clippy.load(agentName, agent => {
+        window[agentName] = agent
 
-    playMusic()
+        const move = () => {
+            agent.moveTo($(document).width() * randPos(), $(document).height() * randPos())
+        }
+
+        move()
+
+        agent.show();
+
+        // Speak on click and start
+        const speak = () => {
+            agent.speak('I am ' + agentName + ', ' + talks[~~(Math.random() * talks.length)])
+            agent.animate()
+        }
+        $(agent._el).click(() => speak())
+        speak()
+
+        // Animate randomly
+        setInterval(() => {
+            agent.animate()
+        }, 3000 + (Math.random() * 4000))
+
+        // Move randomly
+        setInterval(() => {
+            move()
+        }, 3000 + (Math.random() * 4000))
+
+        setTimeout(nextAgent, 2000)
+    });
+}
+
+nextAgent()
     })
   })
 

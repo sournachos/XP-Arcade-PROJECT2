@@ -1,4 +1,5 @@
 <div id="test">
+{{#if logged_in}}
 <div class="minesweeper-container"> 
   <div class="minesweeper-grid"></div>
   <div class="minesweeper-score shadow bg-secondary rounded p-1 border border-2 border-dark">
@@ -13,3 +14,6 @@
 </div>
 </div>
 <script src="js/minesweeper.js"></script>
+{{/if}}
+
+<script src="js/logout.js"></script>

@@ -37,7 +37,7 @@ router.get("/login", async (req,res) =>{
 
 router.get("/minesweeper", async (req, res) => {
   try {
-    res.render('minesweeper');
+    res.render('minesweeper', {logged_in:req.session.logged_in});
     res.status(200);
   } catch (err) {
     console.log(err);
@@ -47,7 +47,7 @@ router.get("/minesweeper", async (req, res) => {
 
 router.get("/snake", async (req, res) => {
   try {
-    res.render('snake');
+    res.render('snake',{logged_in:req.session.logged_in});
     res.status(200);
   } catch (err) {
     console.log(err);
@@ -57,7 +57,7 @@ router.get("/snake", async (req, res) => {
 
 router.get("/home", async (req, res) => {
   try{
-    res.render('home')
+    res.render('home',{logged_in:req.session.logged_in})
     res.status(200)
   }
   catch (err){
