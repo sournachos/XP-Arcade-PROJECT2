@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const {User} = require('../models');
 
 router.get('/', async (req, res) => {
     try {
@@ -65,6 +66,23 @@ router.get("/home", async (req, res) => {
   }
 })
 
+router.get('/leaderboard', async (req, res) => {
+  try {
+    const scoresDB = await User.findAll({
+      attributes: ['username', 'minesweeper_score'],
+      order: [[ 'minesweeper_score', 'ASC' ]]
+    });
 
+    const scoresData = scoresDB.map((item) =>
+      item.get({ plain: true }));
+
+    res.status(200).json(scoresData);
+    res.render('leaderboard', {scoresData, logged_in: req.session.logged_in})
+    res.status(200)
+  }
+  catch (err) {
+    console.log(err);
+  }
+})
 
 module.exports = router

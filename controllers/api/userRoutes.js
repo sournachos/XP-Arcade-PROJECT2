@@ -109,7 +109,7 @@ router.put('/minesweeper', async (req, res) => {
     msScore = userData.minesweeper_score;
     // compare new score to current score
     if(newScore < msScore) {
-      await User.update(
+      const scoreUpdate = await User.update(
         {
           minesweeper_score: req.body.time,
         },
@@ -119,18 +119,12 @@ router.put('/minesweeper', async (req, res) => {
           },
         }
       )
-      res.status(200);
     }
-    const scoresDB = await User.findAll({
-      attributes: ['username', 'minesweeper_score'],
-      order: [[ 'minesweeper_score', 'ASC' ]]
-    });
-
-    const scoresData = scoresDB.map((item) =>
-      item.get({ plain: true }));
-
-    res.status(200).json(scoresData);
-    console.log(scoresData);
+    console.log("INSIDE THE PUT FOR MINESWEEPER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    res.status(200);
+    // res.redirect('/leaderboard')
+    // console.log(scoresData);
+    
    
   } catch (err) {
     res.json(err);
