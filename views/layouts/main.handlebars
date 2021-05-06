@@ -2,14 +2,6 @@
 <html lang="en">
 
 <head>
-  <style type="text/css">
-    body {
-      background-image: url('../images/background.jpg');
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-    }
-  </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Windows XP</title>
@@ -24,17 +16,18 @@
 {{!-- this page will show if you are logged in --}}
   {{#if logged_in}}
   <div class="drag-me" draggable="true">
-    <a href="/minesweeper" draggable="false" class="bg-danger h5 text-light">minesweeper</a>
+    <a href="/minesweeper" draggable="false" class="text-light text-decoration-none"><img src="/images/mine.png" draggable="false" width="40" height="40"><h6 class="bg-danger rounded px-1">Minesweeper</h6></a>
   </div>
   <div class="drag-me" draggable="true">
-    <a href="/snake" draggable="false" class="bg-success h5 text-light">Snake</a>
+    <a href="/snake" draggable="false" class="text-light text-decoration-none"><img src="/images/snake.png" draggable="false" width="40" height="40"><h6 class="bg-success rounded px-1">Snake</h6></a>
   </div>
-  <div class="drag-me"draggable="true">
-    <a href="/anothergame" draggable="false" class="bg-success h5 text-light">anothergame</a>
+  <div class="drag-me" draggable="true">
+    <a href="/anothergame" draggable="false" class="bg-success text-light text-decoration-none">anothergame</a>
   </div>
   <button id="logoutButton"> LOG OUT </button>
   {{/if}}
-  <div class="bg-primary fixed-bottom d-flex justify-content-start">
+  <br>
+  <div class="bg-primary d-flex justify-content-start taskbar">
     <a href="/" class="bg-success px-2 text-decoration-none rounded-right text-light">Home</a>
   </div>
   <main>
