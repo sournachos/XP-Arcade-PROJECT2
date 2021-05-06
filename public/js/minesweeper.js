@@ -71,6 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const timerEl = document.querySelector('#timer');
   let time = 0;
   const timer = setInterval(() => {
+    if (time >= 999) {
+      clearInterval(timer);
+    }
     time++;
     timerEl.textContent = time
   }, 1000)
