@@ -1,26 +1,26 @@
 [
     {
-      "username": "hamzaS",
-      "password": "password12345",
-      "minesweeper_score": 20,
-      "snake_score":20
+        "username": "hamzaS",
+        "password": "password12345",
+        "minesweeper_score": 20,
+        "snake_score": 20
     },
     {
         "username": "mattyP",
         "password": "password12345",
         "minesweeper_score": 20,
-        "snake_score":20
+        "snake_score": 20
     },
     {
         "username": "mattyB",
         "password": "password12345",
         "minesweeper_score": 20,
-        "snake_score":20
+        "snake_score": 20
     },
     {
         "username": "joseS",
         "password": "password12345",
         "minesweeper_score": 20,
-        "snake_score":20
+        "snake_score": 20
     }
-  ]
+]
