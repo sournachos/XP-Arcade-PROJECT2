@@ -5,7 +5,9 @@ window.onload=function() {
     canv=document.getElementById("gc");
     ctx=canv.getContext("2d");
     document.addEventListener("keydown",keyPush);
-    setInterval(game,1000/15);
+    const playagain2 = document.querySelector('#playagain2')
+    const result1 = document.querySelector('#result1')
+    const game1 = setInterval(game,1000/15);
 }
 px=py=10;
 gs=tc=20;
@@ -36,8 +38,16 @@ function game() {
         ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
         if(trail[i].x==px && trail[i].y==py) {
             tail = 5;
+
+            // clearInterval(game1)
+            // playagain2.style.display = 'block'
+            // result1.innerHTML = `Score: ${tail}`
+            // break
+
+
         }
     }
+    
     trail.push({x:px,y:py});
     while(trail.length>tail) {
     trail.shift();
