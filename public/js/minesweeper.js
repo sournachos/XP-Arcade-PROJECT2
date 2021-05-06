@@ -204,24 +204,28 @@ document.addEventListener('DOMContentLoaded', () => {
         playagain1.style.display = 'block'
         result.innerHTML = 'YOU WIN!'
         isGameOver = true
-        if (i === squares.length - 1) {
-          submitScore();
+        if(i === squares.length - 1){
+          console.log("Submitting score!!!!!!!!")
+          submitScore(time);
         }
       }
     }
   }
-
-  async function submitScore() {
-    const response = await fetch('/api/user/minesweeper', {
-      method: 'PUT',
-      body: JSON.stringify({ time }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      // show scores
-    } else {
-      // do something else
-    }
-  }
 })
+
+async function submitScore(time) {
+  console.log("Inside submit score function")
+  const response = await fetch('/api/user/minesweeper', {
+    method: 'PUT',
+    body: JSON.stringify({ time }),
+    headers: {'Content-Type': 'application/json' },
+  });
+  console.log(response)
+  if(response.ok) {
+    console.log("hi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    window.location.href = '/leaderboard'
+  } else {
+    // do something else
+    console.log("Response not ok!!!!!!")
+  }
+}
