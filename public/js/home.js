@@ -7,10 +7,13 @@ clippy.load('Clippy', async function(agent){
     })
 });
 
-document.querySelector("#logoutButton").addEventListener("click", async function(){
-    await fetch('api/user/logout', {
-        method:'POST',
-        headers: {'Content-Type': 'application/json'},
-    })
-    location.reload()
+clippy.load('Rover', async function (agent) {
+    // Do anything with the loaded agent;
+    x = window.innerWidth / 2
+    y = window.innerHeight / 2
+    agent.moveTo(x, y+100)
+    agent.show()
+    const inter = setInterval(async function () {
+        agent.speak("CLICK ME FOR A FUN SONG!")
+    }, 5000)
 })
