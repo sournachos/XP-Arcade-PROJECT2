@@ -56,6 +56,35 @@ router.post('/login', async (req, res) => {
     }
 })
 
+router.post('/signup', async (req, res) => {
+  console.log("HERERER")
+  try{
+    let notFound = true;
+    (await User.findAll()).map(user => {
+         if (user.username == req.body.username){
+             notFound = false
+             res.status(403).json({message:"User already exists!"})
+         }
+    })
+    if (notFound){
+         await User.create({
+             username:req.body.username,
+             password:req.body.password
+         }).then(user=>{
+             req.session.save(() => {
+                     req.session.user_id = user.id;
+                     req.session.logged_in = true;
+                     res.status(200).redirect('/')
+             })
+         })
+     }
+ }
+ catch(err){
+     console.log(err)
+     res.status(400).json(err)
+ }
+})
+
 router.post('/logout', async (req,res) => {
   try{
     if(req.session.logged_in){

@@ -71,4 +71,34 @@ clippy.load('Clippy', async function (agent) {
       location.reload()
   })
 
+  document.querySelector("#loginButton").addEventListener("click", async function(event){
+    event.preventDefault()
+    const username = (document.querySelector("#usernameLogin").value)
+    const password = (document.querySelector("#passwordLogin").value)
+    await fetch('api/user/login', {
+        method:'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({username:username,password:password})
+    })
+    location.reload()
+  })
+
+  document.querySelector("#createAccount").addEventListener("click", async function(){
+    const username = (document.querySelector("#usernameSignUp").value)
+    const password = (document.querySelector("#passwordSignUp").value)
+    const passwordCheck = (document.querySelector("#passwordCheck").value)
+
+    if (passwordCheck === password){
+      await fetch('api/user/signup', {
+        method:'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({username:username,password:password})
+    })
+    location.reload()
+    }
+    else{
+      alert("Passwords do not match")
+    }
+  })
+
 })
