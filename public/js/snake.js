@@ -1,5 +1,17 @@
 // Credits to Chris DeLeon of HomeTeam GameDev for this code
 //https://www.youtube.com/watch?v=xGmXxpIj6vs
+clippy.load('Genie', async function (agent) {
+    // Do anything with the loaded agent;
+    x = window.innerWidth * 0.75
+    y = window.innerHeight * 0.2
+    agent.show()
+    agent.moveTo(x, y)
+    const inter = setInterval(async function () {
+        agent.speak("I SURE DOTH LOVE MINESWEEPER!")
+        agent.animate()
+    }, 15000)
+  })
+
 
 window.onload = function () {
     canv = document.getElementById("gc");

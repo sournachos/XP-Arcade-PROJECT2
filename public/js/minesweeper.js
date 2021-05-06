@@ -5,8 +5,9 @@ clippy.load('Merlin', async function (agent) {
   agent.show()
   agent.moveTo(x, y)
   const inter = setInterval(async function () {
-      agent.speak("I love minesweeper!")
-  }, 10000)
+      agent.speak("I SURE DOTH LOVE MINESWEEPER!")
+      agent.animate()
+  }, 15000)
 })
 
 document.addEventListener('DOMContentLoaded', () => {
