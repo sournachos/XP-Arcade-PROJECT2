@@ -1,10 +1,15 @@
-
+<div id="test">
 <div class="minesweeper-container"> 
   <div class="minesweeper-grid"></div>
-  <div class="minesweeper-score bg-secondary">
-    <div>Time: <span id='timer'>0</span></div>
-    <div>Flags left: <span id='flags-left'></span></div>
-    <div id="result"></div>
+  <div class="minesweeper-score bg-secondary rounded">
+    <div class="px-1">Time: <span id='timer'>0</span></div>
+    <div class="px-1">Flags left: <span id='flags-left'></span></div>
   </div>
+  <div id="playagain1">
+    <div id="result" class="px-2"></div>
+    <a href="/minesweeper" class ="bg-success px-2 text-decoration-none rounded text-light" >Play Again</a>
+  </div>
+    
+</div>
 </div>
 <script src="js/minesweeper.js"></script>
