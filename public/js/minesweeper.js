@@ -1,3 +1,15 @@
+clippy.load('Merlin', async function (agent) {
+  // Do anything with the loaded agent;
+  x = window.innerWidth * 0.75
+  y = window.innerHeight * 0.2
+  agent.show()
+  agent.moveTo(x, y)
+  const inter = setInterval(async function () {
+      agent.speak("I SURE DOTH LOVE MINESWEEPER!")
+      agent.animate()
+  }, 15000)
+})
+
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.minesweeper-grid')
   const flagsLeft = document.querySelector('#flags-left')
