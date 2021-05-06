@@ -56,6 +56,19 @@ router.post('/login', async (req, res) => {
     }
 })
 
+router.post('/logout', async (req,res) => {
+  try{
+    if(req.session.logged_in){
+      req.session.destroy(async () => {
+        res.status(200).render('login')
+      })
+    }
+  }
+  catch (err){
+    console.log(err)
+  }
+})
+
 // put minesweeper score
 router.put('/minesweeper', async (req, res) => {
   try{

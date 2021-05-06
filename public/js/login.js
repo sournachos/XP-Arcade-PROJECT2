@@ -59,7 +59,8 @@ clippy.load('Clippy', async function (agent) {
     document.querySelector("#signup").style.display = "none"
   })
 
-  document.querySelector("#loginButton").addEventListener("click", async function(){
+  document.querySelector("#loginButton").addEventListener("click", async function(event){
+      event.preventDefault()
       const username = (document.querySelector("#usernameLogin").value)
       const password = (document.querySelector("#passwordLogin").value)
       await fetch('api/user/login', {
@@ -67,7 +68,7 @@ clippy.load('Clippy', async function (agent) {
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({username:username,password:password})
       })
-      window.location.href = '/'
+      location.reload()
   })
 
 })
