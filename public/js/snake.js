@@ -34,6 +34,7 @@ function game() {
     ctx.fillStyle="lime";
     for(var i=0;i<trail.length;i++) {
         ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
+        //when you loose reset the legnth to 5
         if(trail[i].x==px && trail[i].y==py) {
             tail = 5;
         }
@@ -42,7 +43,7 @@ function game() {
     while(trail.length>tail) {
     trail.shift();
     }
- 
+ //lengthen tail on hitting square
     if(ax==px && ay==py) {
         tail++;
         ax=Math.floor(Math.random()*tc);
