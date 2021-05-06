@@ -1,67 +1,68 @@
 const router = require('express').Router();
 const {User} = require('../models');
 
+//renders page based on login status
 router.get('/', async (req, res) => {
-    try {
-        if (req.session.logged_in){
-          res.render('home',{logged_in:req.session.logged_in})
-        }
-        else{
-          res.render('login');
-        }
-    } 
-    catch (err) {
-      console.log(err);
-      res.status(500).json(err);
+  try {
+    if (req.session.logged_in) {
+      res.render('home', { logged_in: req.session.logged_in })
     }
-  });
-
-router.get('/clippy', async (req,res) =>{
-  try{
+    else {
+      res.render('login');
+    }
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+//puts clippy on pages
+router.get('/clippy', async (req, res) => {
+  try {
     res.render('clippy')
   }
-  catch(err){
+  catch (err) {
     console.log(err)
     res.status(500).json(err)
   }
 })
-
-router.get("/login", async (req,res) =>{
-  try{
+//main page route
+router.get("/login", async (req, res) => {
+  try {
     res.render('login')
   }
-  catch (err){
+  catch (err) {
     console.log(err)
     res.status(500).json(err)
   }
 })
-
+//loads minesweeper page
 router.get("/minesweeper", async (req, res) => {
   try {
-    res.render('minesweeper', {logged_in:req.session.logged_in});
+    res.render('minesweeper', { logged_in: req.session.logged_in });
     res.status(200);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 })
-
+//loads snake page
 router.get("/snake", async (req, res) => {
   try {
-    res.render('snake',{logged_in:req.session.logged_in});
+    res.render('snake', { logged_in: req.session.logged_in });
     res.status(200);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 })
-
+//once logged in load new page with access to games
 router.get("/home", async (req, res) => {
-  try{
-    res.render('home',{logged_in:req.session.logged_in})
+  try {
+    res.render('home', { logged_in: req.session.logged_in })
     res.status(200)
   }
-  catch (err){
+  catch (err) {
     console.log(err)
   }
 })
