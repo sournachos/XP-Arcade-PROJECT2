@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../../models')
+const { User } = require('../../models');
+const { sequelize } = require('../../models/User');
 
 
 router.get('/', async (req, res) => {
@@ -102,10 +103,11 @@ router.post('/logout', async (req,res) => {
 router.put('/minesweeper', async (req, res) => {
   try{
     const newScore = req.body.time;
-
+    // find user's current high score
     const userDB = await User.findByPk(req.session.user_id);
     const userData = userDB.get({ plain: true });
     msScore = userData.minesweeper_score;
+    // compare new score to current score
     if(newScore < msScore) {
       await User.update(
         {
@@ -119,9 +121,30 @@ router.put('/minesweeper', async (req, res) => {
       )
       res.status(200);
     }
+    const scoresDB = await User.findAll({
+      attributes: ['username', 'minesweeper_score'],
+      order: [[ 'minesweeper_score', 'ASC' ]]
+    });
+
+    const scoresData = scoresDB.map((item) =>
+      item.get({ plain: true }));
+
+    res.status(200).json(scoresData);
+    console.log(scoresData);
+   
   } catch (err) {
     res.json(err);
   }
+})
+
+router.get('/minesweeper', async (req, res) => {
+  try {
+
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+
 })
 
 module.exports = router
