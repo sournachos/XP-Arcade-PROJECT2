@@ -1,11 +1,16 @@
 
 {{#if logged_in}}
-<div class="leaderboard">
-  <ol class="lb-list">
+<div class=" leaderboard pt-3">
+  <h3 class="lb-title">Leaderboard</h3>
+  <ul class="lb-list">
     {{#each scoresData as |data|}}
-    <li class="lb-item mb-4">{{username}} {{minesweeper_score}}</li>
+      <li class="lb-item pr-4">
+        <div class="test d-flex flex-row justify-content-between align-items-center">
+          <span class="lb-user">{{username}}</span> <span class="lb-score">{{minesweeper_score}}</span>
+        </div>
+      </li>
     {{/each}}
-  </ol>
+  </ul>
 </div>
 {{/if}}
 <script src="js/logout.js"></script>
