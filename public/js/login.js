@@ -59,4 +59,8 @@ clippy.load('Clippy', async function (agent) {
     document.querySelector("#signup").style.display = "none"
   })
 
+  document.querySelector('#finishCreation').addEventListener("click", function(){
+    document.querySelector("#login").style.display = "inline-block"
+    document.querySelector("#signup").style.display = "none"
+  })
 })

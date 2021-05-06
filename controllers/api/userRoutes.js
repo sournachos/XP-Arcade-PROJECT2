@@ -45,8 +45,7 @@ router.post('/login', async (req, res) => {
     }
 })
 
-
-app.post('/api/register', async (req, res) => {
+router.post('', async (req, res) => {
 	const { username, password: plainTextPassword } = req.body
 
 	if (!username || typeof username !== 'string') {
@@ -79,7 +78,6 @@ app.post('/api/register', async (req, res) => {
 		}
 		throw error
 	}
-
 	res.json({ status: 'ok' })
 })
 

@@ -50,9 +50,10 @@ const user = []
 app.get('/users', (req, res) => {
   res.json(users)
 })
-
+//processing login
 app.post('/users', async (req, res) => {
   try {
+    //encrypt password
     const salt = bcrypt.getSalt()
     const hashedPassword = await bcrypt.hash(req.body.password, 10)
     console.log(salt)
@@ -63,6 +64,41 @@ app.post('/users', async (req, res) => {
   }catch{
     res.status(500).send()
   }
- 
+})
 
+
+app.post('/users', async (req, res) => {
+	const { username, password: plainTextPassword } = req.body.ju
+
+	if (!username || typeof username !== 'string') {
+		return res.json({ status: 'error', error: 'Invalid username' })
+	}
+
+	if (!plainTextPassword || typeof plainTextPassword !== 'string') {
+		return res.json({ status: 'error', error: 'Invalid password' })
+	}
+
+	if (plainTextPassword.length < 5) {
+		return res.json({
+			status: 'error',
+			error: 'Password too small. Should be atleast 6 characters'
+		})
+	}
+
+	const password = await bcrypt.hash(plainTextPassword, 10)
+
+	try {
+		const response = await User.create({
+			username,
+			password
+		})
+		console.log('User created successfully: ', response)
+	} catch (error) {
+		if (error.code === 11000) {
+			// duplicate key
+			return res.json({ status: 'error', error: 'Username already in use' })
+		}
+		throw error
+	}
+	res.json({ status: 'ok' })
 })
