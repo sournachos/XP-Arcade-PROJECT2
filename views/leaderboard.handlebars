@@ -1,8 +1,11 @@
+
+{{#if logged_in}}
 <div class="leaderboard">
   <ol class="lb-list">
-    <li>helloooooo</li>
     {{#each scoresData as |data|}}
     <li class="lb-item mb-4">{{username}} {{minesweeper_score}}</li>
     {{/each}}
   </ol>
 </div>
+{{/if}}
+<script src="js/logout.js"></script>

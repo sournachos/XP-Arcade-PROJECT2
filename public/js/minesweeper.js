@@ -217,7 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
         result.innerHTML = 'YOU WIN!'
         isGameOver = true
         if(i === squares.length - 1){
-          console.log("Submitting score!!!!!!!!")
           submitScore(time);
         }
       }
@@ -226,18 +225,11 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 async function submitScore(time) {
-  console.log("Inside submit score function")
-  const response = await fetch('/api/user/minesweeper', {
-    method: 'PUT',
-    body: JSON.stringify({ time }),
-    headers: {'Content-Type': 'application/json' },
-  });
-  console.log(response)
-  if(response.ok) {
-    console.log("hi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    window.location.href = '/leaderboard'
-  } else {
-    // do something else
-    console.log("Response not ok!!!!!!")
-  }
+  console.log(time)
+  await fetch("/api/user/minesweeper",{
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({time})
+  })
+  window.location.replace("/leaderboard")
 }

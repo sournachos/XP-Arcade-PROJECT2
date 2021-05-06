@@ -116,12 +116,7 @@ router.put('/minesweeper', async (req, res) => {
         }
       )
     }
-    console.log("INSIDE THE PUT FOR MINESWEEPER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-    res.status(200);
-    // res.redirect('/leaderboard')
-    // console.log(scoresData);
-    
-   
+    res.status(200).redirect("/leaderboard");
   } catch (err) {
     res.json(err);
   }
