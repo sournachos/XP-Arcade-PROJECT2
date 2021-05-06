@@ -74,11 +74,16 @@ router.get('/leaderboard', async (req, res) => {
       order: [[ 'minesweeper_score', 'ASC' ]]
     });
 
-    const scoresData = scoresDB.map((item) =>
-      item.get({ plain: true }));
+    output =[]
 
+    const scoresData = scoresDB.map((item) =>{
+      if(item.dataValues.minesweeper_score){
+        item.get({ plain: true })
+        output.push(item.dataValues)
+      };
+    })
     //res.status(200).json(scoresData);
-    res.render('leaderboard', {scoresData:scoresData, logged_in: req.session.logged_in})
+    res.render('leaderboard', {scoresData:output, logged_in: req.session.logged_in})
     res.status(200)
   }
   catch (err) {

@@ -226,5 +226,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function submitScore(time) {
   console.log(time)
+  await fetch("/api/user/minesweeper",{
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({time})
+  })
   window.location.replace("/leaderboard")
 }
