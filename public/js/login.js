@@ -56,7 +56,7 @@ clippy.load('Clippy', async function (agent) {
 
     document.querySelector("body").style.backgroundImage = "url(images/background-alternative.png)"
 
-    //playMusic()
+    playMusic()
     })
   })
 
