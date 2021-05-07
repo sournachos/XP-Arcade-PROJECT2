@@ -3,6 +3,13 @@ document.querySelector("#logoutButton").addEventListener("click", async function
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
     })
-    location.reload()
-    window.location.replace("/")
+    playLogin()
+    setTimeout(function(){
+        location.reload()
+        window.location.replace("/")
+    },3000)
 })
+
+function playLogin(){
+    loginaudio.play()
+}
