@@ -105,17 +105,27 @@ clippy.load('Clippy', async function (agent) {
     document.querySelector("#login").style.display = "inline-block"
     document.querySelector("#signup").style.display = "none"
   })
+
+function playLogin(){
+  loginaudio.play()
+}
+
 //creates login function taking the user input and cross referencing to the DB for 'user'
   document.querySelector("#loginButton").addEventListener("click", async function (event) {
     event.preventDefault()
     const username = (document.querySelector("#usernameLogin").value)
     const password = (document.querySelector("#passwordLogin").value)
-    await fetch('api/user/login', {
+    const response = await fetch('api/user/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: username, password: password })
     })
-    location.reload()
+    console.log(response)
+    if(response.ok){
+      playLogin()
+      document.querySelector("#login").style.display = "none"
+      setTimeout(function(){location.reload()},2500)
+    }
   })
 //creates function to take user input and make a new user in the DB
   document.querySelector("#createAccount").addEventListener("click", async function () {
