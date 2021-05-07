@@ -2,10 +2,7 @@
 
 ___
 
-
   ![Background Picture](./public/images/background.jpg)
-
-
 
 <p align="center">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/sournachos/XP-Arcade-PROJECT2">
