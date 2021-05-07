@@ -102,9 +102,9 @@ router.put('/minesweeper', async (req, res) => {
     // find user's current high score
     const userDB = await User.findByPk(req.session.user_id);
     const userData = userDB.get({ plain: true });
-    msScore = userData.minesweeper_score;
+    const msScore = userData.minesweeper_score;
     // compare new score to current score
-    if(newScore < msScore) {
+    if(newScore < msScore || msScore == null) {
       const scoreUpdate = await User.update(
         {
           minesweeper_score: req.body.time,
