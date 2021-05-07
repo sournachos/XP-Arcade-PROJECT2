@@ -14,15 +14,19 @@
 
 <body class = "xp">
 {{!-- this page will show if you are logged in --}}
+  <section class="d-flex flex-row justify-content-start ">
   {{#if logged_in}}
-  <div ondblclick="location.href='/minesweeper';" id = "bomberMine" class="drag-me" draggable="true">
-    <img class ="text-center" src="/images/mine.png" draggable="false" width="40" height="40">
-    <br><span>Minesweeper</span>
-  </div>
-  <div ondblclick="location.href='/snake';" class="drag-me" draggable="true">
-    <img class="text-center" src="/images/snake.png" draggable="false" width="40" height="40">
-    <br><span>Snake</span>
-  </div>
+    <div ondblclick="location.href='/minesweeper';" id = "bomberMine" class="drag-me d-flex flex-column align-items-center justify-content-start float-left" draggable="true">
+      <img class ="text-center" src="/images/mine.png" draggable="false" width="40" height="40">
+      <br><span>Minesweeper</span>
+    </div>
+  </section>
+  <section class="d-flex flex-row justify-content-start ">
+    <div ondblclick="location.href='/snake';" class="drag-me d-flex flex-column align-items-center justify-content-start float-left" draggable="true">
+      <img class="text-center" src="/images/snake.png" draggable="false" width="40" height="40">
+      <br><span>Snake</span>
+    </div>
+  </section>
   <button id="logoutButton"> LOG OUT </button>
   {{/if}}
   <br>

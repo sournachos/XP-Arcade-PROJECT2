@@ -30,6 +30,7 @@ body {
     border: 100px;    
 }
 
+
 .minesweeper-score {
   width: auto;
   font-size: 22px;
@@ -203,7 +204,9 @@ h6{
   z-index: 2;
   height: 4.5vh;
 }
-
+#bomberMine {
+  margin-left: 10px;
+}
 .taskbar{
   z-index: 1;
   width: 100vw;
@@ -213,6 +216,8 @@ h6{
 }
 
 .drag-me{
-  display:inline;
-  margin: 30px;
+  display:block;
+  margin: 6px 0px 0px 36px;
+  margin-left: 36px;
+  /* width: 10%; */
 }
