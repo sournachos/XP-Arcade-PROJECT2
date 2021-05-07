@@ -16,10 +16,14 @@
 {{!-- this page will show if you are logged in --}}
   {{#if logged_in}}
   <div class="drag-me" draggable="true">
-    <a href="/minesweeper" draggable="false" class="text-light text-decoration-none"><img src="/images/mine.png" draggable="false" width="40" height="40"><h6 class="bg-danger rounded px-1">Minesweeper</h6></a>
+    <a href="/minesweeper" draggable="false" class="text-light text-decoration-none">
+    <img src="/images/mine.png" draggable="false" width="40" height="40">
+    <h6 class="bg-danger rounded px-1">Minesweeper</h6></a>
   </div>
   <div class="drag-me" draggable="true">
-    <a href="/snake" draggable="false" class="text-light text-decoration-none"><img src="/images/snake.png" draggable="false" width="40" height="40"><h6 class="bg-success rounded px-1">Snake</h6></a>
+    <a href="/snake" draggable="false" class="text-light text-decoration-none">
+    <img src="/images/snake.png" draggable="false" width="40" height="40">
+    <h6 class="bg-success rounded px-1">Snake</h6></a>
   </div>
   <div class="drag-me" draggable="true">
     <a href="/anothergame" draggable="false" class="bg-success text-light text-decoration-none">anothergame</a>
@@ -33,6 +37,14 @@
   <main>
     {{{body}}}
   </main>
+
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <script>
+    $(function() {
+      $(".drag-me").draggable();
+    });
+  </script>
 </body>
 
 </html>
