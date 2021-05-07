@@ -211,3 +211,8 @@ h6{
   bottom: 0;
   height: 4.5vh;
 }
+
+.drag-me{
+  display:inline;
+  margin: 30px;
+}
