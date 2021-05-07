@@ -8,8 +8,30 @@ ___
 
 
 <p align="center">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/sournachos/XP-Arcade-PROJECT2">
+  <img src="https://img.shields.io/badge/node-%3E%3D%2010.0.0-brightgreen">
+  <img src="https://img.shields.io/badge/website-up-brightgreen">
+  <img src="https://img.shields.io/github/issues/sournachos/XP-Arcade-PROJECT2">
+  <img src="https://img.shields.io/github/issues-closed-raw/sournachos/XP-Arcade-PROJECT2">
+  <img src="https://img.shields.io/github/issues-pr-closed-raw/sournachos/XP-Arcade-PROJECT2">
+  </br>
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/lucas-felinto/readme_maker">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/lucas-felinto/readme_maker">
   <a href="LICENSE">
     <img alt="License" src="https://img.shields.io/badge/license-MIT-%23F8952D">
+  </a>
+    </br>
+  <a href="https://www.linkedin.com/in/jose-rivera-343bb9208/">
+    <img alt="My Linkedin" src="https://img.shields.io/badge/Jose Rivera-%230077B5?style=social&logo=linkedin">
+  </a>
+  <a href="https://www.linkedin.com/in/hamza-sait-083371144/">
+    <img alt="My Linkedin" src="https://img.shields.io/badge/Hamza Sait-%230077B5?style=social&logo=linkedin">
+  </a>
+  <a href="https://www.linkedin.com/in/matthew-parker-1276221b5/">
+    <img alt="My Linkedin" src="https://img.shields.io/badge/Matt Parker-%230077B5?style=social&logo=linkedin">
+  </a>
+  <a href="https://www.linkedin.com/in/matthew-bohl-93785a127/">
+    <img alt="My Linkedin" src="https://img.shields.io/badge/Matthew Bohl-%230077B5?style=social&logo=linkedin">
   </a>
 </p>
 
@@ -25,7 +47,6 @@ ___
 
 ___
 
-<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fhetnice.blogspot.com%2F2018%2F05%2Fgif-wallpaper-windows-xp.html&psig=AOvVaw2XIYEp1qbuOYWpDvVxWeGg&ust=1620488198021000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjDw5Lzt_ACFQAAAAAdAAAAABAD" width="1200">
 
 ## :information_source: About
 
