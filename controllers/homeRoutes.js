@@ -84,7 +84,7 @@ router.get('/leaderboard', async (req, res) => {
     })
     // only include top 10 scores
     output.splice(10);
-    
+
     res.render('leaderboard', {scoresData:output, logged_in: req.session.logged_in})
     res.status(200)
   }
