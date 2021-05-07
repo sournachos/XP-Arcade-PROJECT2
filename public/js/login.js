@@ -124,7 +124,7 @@ function playLogin(){
     if(response.ok){
       playLogin()
       document.querySelector("#login").style.display = "none"
-      setTimeout(function(){location.reload()},2500)
+      setTimeout(function(){location.reload()},3000)
     }
   })
 //creates function to take user input and make a new user in the DB
