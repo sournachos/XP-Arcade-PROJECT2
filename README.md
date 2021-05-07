@@ -15,8 +15,8 @@ ___
   <img src="https://img.shields.io/github/issues-closed-raw/sournachos/XP-Arcade-PROJECT2">
   <img src="https://img.shields.io/github/issues-pr-closed-raw/sournachos/XP-Arcade-PROJECT2">
   </br>
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/lucas-felinto/readme_maker">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/lucas-felinto/readme_maker">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/sournachos/XP-Arcade-PROJECT2">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/sournachos/XP-Arcade-PROJECT2">
   <a href="LICENSE">
     <img alt="License" src="https://img.shields.io/badge/license-MIT-%23F8952D">
   </a>
