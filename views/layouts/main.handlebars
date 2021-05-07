@@ -15,13 +15,14 @@
 <body class = "xp">
 {{!-- this page will show if you are logged in --}}
   {{#if logged_in}}
-  <div ondblclick="location.href='/minesweeper';" id = "bomberMine" class="drag-me" draggable="true">
-    <img class ="text-center" src="/images/mine.png" draggable="false" width="40" height="40">
-    <br><span>Minesweeper</span>
+
+  <div ondblclick="location.href='/minesweeper';" id = "bomberMine" class="drag-me container-fluid my-1" draggable="true">
+    <img class ="text-center row ml-2 mr-0 my-0" src="/images/mine.png" draggable="false" width="40" height="40">
+    <p class="row">Minesweeper</p>
   </div>
-  <div ondblclick="location.href='/snake';" class="drag-me" draggable="true">
-    <img class="text-center" src="/images/snake.png" draggable="false" width="40" height="40">
-    <br><span>Snake</span>
+  <div ondblclick="location.href='/snake';" class="drag-me container-fluid ml-2 my-1" draggable="true">
+    <img class="text-center row m-0" src="/images/snake.png" draggable="false" width="40" height="40">
+    <p>Snake</p>
   </div>
   <button id="logoutButton"> LOG OUT </button>
   {{/if}}
@@ -29,6 +30,7 @@
   <div class="bg-primary d-flex justify-content-start taskbar">
     <a href="/" class="bg-success px-2 text-decoration-none rounded-right text-light">Home</a>
   </div>
+  
   <main>
     {{{body}}}
   </main>
