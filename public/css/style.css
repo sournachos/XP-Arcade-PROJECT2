@@ -143,7 +143,9 @@ body {
 
 .leaderboard {
   /* display: inline-block; */
-  width: 30%;
+  width: 50%;
+  max-width: 420px;
+  min-width: 240px;
   margin: auto;
   /* padding-right: 36px; */
   border-radius: 3%;
