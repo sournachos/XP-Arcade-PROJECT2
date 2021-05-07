@@ -16,10 +16,12 @@
 {{!-- this page will show if you are logged in --}}
   {{#if logged_in}}
   <div ondblclick="location.href='/minesweeper';" id = "bomberMine" class="drag-me" draggable="true">
-    <img src="/images/mine.png" draggable="false" width="40" height="40">Minesweeper<img>
+    <img class ="text-center" src="/images/mine.png" draggable="false" width="40" height="40">
+    <br><span>Minesweeper</span>
   </div>
   <div ondblclick="location.href='/snake';" class="drag-me" draggable="true">
-    <img src="/images/snake.png" draggable="false" width="40" height="40">Snake<img>
+    <img class="text-center" src="/images/snake.png" draggable="false" width="40" height="40">
+    <br><span>Snake</span>
   </div>
   <button id="logoutButton"> LOG OUT </button>
   {{/if}}
