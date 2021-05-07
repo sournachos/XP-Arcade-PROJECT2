@@ -64,6 +64,7 @@ clippy.load('Clippy', async function (agent) {
         'Your life is a lie',
         'CHUTHULU ACCEPTS YOUR SACRIFICE',
         'I AM DEAD',
+        'I hate everyone',
       ]
 
       const randPos = () => .2 + Math.random() * .6
